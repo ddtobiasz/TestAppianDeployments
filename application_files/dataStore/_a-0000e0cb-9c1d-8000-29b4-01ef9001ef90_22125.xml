@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<dataStoreHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e0cb-9c1d-8000-29b4-01ef9001ef90_22137</versionUuid>
+    <dataStore>
+        <uuid>_a-0000e0cb-9c1d-8000-29b4-01ef9001ef90_22125</uuid>
+        <name>QACC Quick App Called Crap</name>
+        <description>Data store containing all application's data store entities. [Data]</description>
+        <dataSourceKey>jdbc/Appian</dataSourceKey>
+        <adaptingExplicitSqlNames>false</adaptingExplicitSqlNames>
+        <autoUpdateSchema>false</autoUpdateSchema>
+        <entities>
+            <entity>
+                <uuid>bc9a3fc5-9214-4d87-9d7b-7e4551795e73</uuid>
+                <name>QACC_Activity</name>
+                <type>{urn:com:appian:types:QACC}QACC_Activity</type>
+            </entity>
+            <entity>
+                <uuid>9b09f17a-44b6-413b-a380-adc23ee37550</uuid>
+                <name>QACC_QuickAppCalledCrap</name>
+                <type>{urn:com:appian:types:QACC}QACC_QuickAppCalledCrap</type>
+            </entity>
+        </entities>
+    </dataStore>
+    <isPublished>true</isPublished>
+    <roleMap>
+        <role inherit="false" allowForAll="false" name="administrators">
+            <users/>
+            <groups>
+                <groupUuid>_e-0000e0cb-9c08-8000-2981-011e94011e94_8</groupUuid>
+            </groups>
+        </role>
+        <role inherit="false" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="readers">
+            <users/>
+            <groups>
+                <groupUuid>_e-0000e0cb-9c08-8000-2981-011e94011e94_9</groupUuid>
+            </groups>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e0cb-9c1d-8000-29b4-01ef9001ef90_22137"/>
+    </history>
+</dataStoreHaul>

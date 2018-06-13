@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<taskReportHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>f1dbf531-0f22-4574-9a99-e78ea2deffca</versionUuid>
+    <taskReport a:uuid="fb9d9cd3-7205-4a22-9f7a-2da864a1a94e" name="Quick App Called Crap">
+        <a:description>Task report showing open tasks in the Quick App Called Crap application [Tasking]</a:description>
+        <a:uiExpr>=#"_a-0000e0cb-9c1d-8000-29b4-01ef9001ef90_22101"()</a:uiExpr>
+        <a:urlStub>DAb6SA</a:urlStub>
+    </taskReport>
+    <roleMap>
+        <role name="report_administrator">
+            <users/>
+            <groups>
+                <groupUuid>_e-0000e0cb-9c08-8000-2981-011e94011e94_8</groupUuid>
+            </groups>
+        </role>
+        <role name="report_viewer">
+            <users/>
+            <groups>
+                <groupUuid>_e-0000e0cb-9c08-8000-2981-011e94011e94_9</groupUuid>
+            </groups>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="f1dbf531-0f22-4574-9a99-e78ea2deffca"/>
+    </history>
+</taskReportHaul>

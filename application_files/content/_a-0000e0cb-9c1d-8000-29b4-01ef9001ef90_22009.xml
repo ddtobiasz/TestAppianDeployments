@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e0cb-9c1d-8000-29b4-01ef9001ef90_22549</versionUuid>
+    <rule>
+        <name>QACC_GetMonthRange</name>
+        <uuid>_a-0000e0cb-9c1d-8000-29b4-01ef9001ef90_22009</uuid>
+        <description>Rule that displays month-year for a certain interval of months. Pass 1 as the startIndex to return the current month. [Reports]</description>
+        <parentUuid>7613c2b2-aeb3-41fb-a449-38e2378e994c</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>with(
+  local!range: ri!startIndex + enumerate(1 + ri!endIndex - ri!startIndex),
+  #"SYSTEM_SYSRULES_forEach"(
+    items: local!range,
+    expression: text(
+      eomonth(today(), fv!item),
+      "YYYY-M"
+    )
+  )
+)</definition>
+        <namedTypedValue>
+            <name>startIndex</name>
+            <type>
+                <name>int</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>endIndex</name>
+            <type>
+                <name>int</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e0cb-9c1d-8000-29b4-01ef9001ef90_22549"/>
+    </history>
+</contentHaul>

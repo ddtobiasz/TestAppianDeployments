@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<recordTypeHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>6b250859-eae6-4aef-af34-bdbfea71b560</versionUuid>
+    <recordType a:uuid="d9bb2f83-3877-4b57-8303-c29d65b2743d" name="Quick App Called Crap">
+        <a:pluralName>Quick App Called Crap</a:pluralName>
+        <a:description>List of entries in the Quick App Called Crap application</a:description>
+        <a:urlStub>2yN5Hw</a:urlStub>
+        <a:source xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:DataStoreEntity" a:uuid="9b09f17a-44b6-413b-a380-adc23ee37550@_a-0000e0cb-9c1d-8000-29b4-01ef9001ef90_22125"/>
+        <a:listViewTemplateExpr>#"SYSTEM_SYSRULES_recordGridLayoutColumns"(
+  emptygridmessage: "No Quick App Called Crap available",
+  columns: {
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Title",
+      weight: 7,
+      field: "title",
+      component: #"SYSTEM_SYSRULES_recordGrid_linkField"(
+        links: #"SYSTEM_SYSRULES_recordLink"(
+          label: rf!title,
+          recordType: rp!type,
+          identifier: rp!id
+        )
+      )
+    ),
+    
+    
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Created By",
+      weight: 4,
+      field: "createdBy",
+      component: #"SYSTEM_SYSRULES_recordGrid_linkField"(
+        links: {
+          #"SYSTEM_SYSRULES_userRecordLink"(
+            label: #"1fd6d656-cae1-4f61-9097-13cf3ce91e21_FORMATNAME"(rf!createdBy),
+            user: rf!createdBy
+          )
+        }
+      )
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutColumn"(
+      label: "Updated On",
+      width: "DISTRIBUTE",
+      weight: 2,
+      field: "updatedOn",
+      align: "RIGHT",
+      component: #"SYSTEM_SYSRULES_recordGrid_textField"(
+        displayvalue: #"_a-0000e0cb-9c1d-8000-29b4-01ef9001ef90_21997"(rf!updatedOn),
+        align: "RIGHT"
+      )
+    )
+  },
+  pageSize: 50,
+  defaultSort: #"SYSTEM_SYSRULES_sortInfo"(
+    field: "updatedOn",
+    ascending: false
+  )
+)</a:listViewTemplateExpr>
+        <a:fieldCfg name="Created By">
+            <a:isSortable>false</a:isSortable>
+            <a:isSearchable>false</a:isSearchable>
+            <a:isFacet>true</a:isFacet>
+            <a:facetType>EXPRESSION</a:facetType>
+            <a:isExclusiveFacet>true</a:isExclusiveFacet>
+            <a:facetExpr>with(
+  local!creators:#"SYSTEM_SYSRULES_queryEntity"(
+    entity: #"1fc5575c-5753-4afe-8e88-5ad63bf0d008_MAINDSECONSTANT",
+    query: #"SYSTEM_SYSRULES_query"(
+      aggregation: #"SYSTEM_SYSRULES_queryAggregation"(
+        aggregationColumns: {
+          #"SYSTEM_SYSRULES_queryAggregationColumn"(field: "createdBy", isGrouping: true),
+          #"SYSTEM_SYSRULES_queryAggregationColumn"(field: "createdBy", alias: "numberCreated", aggregationFunction: "COUNT")
+        }
+      ),
+      pagingInfo: #"SYSTEM_SYSRULES_pagingInfo"(1, -1, #"SYSTEM_SYSRULES_sortInfo"("createdBy", true))
+    )
+  ),
+  if(
+    local!creators.totalCount = 0,
+    {},
+    #"SYSTEM_SYSRULES_facet_v1"(
+      name: "Created By",
+      options: #"SYSTEM_SYSRULES_forEach"(
+        items: local!creators,
+        expression: #"SYSTEM_SYSRULES_facetOption"(
+          id: fv!index,
+          name: #"1fd6d656-cae1-4f61-9097-13cf3ce91e21_FORMATNAME"(fv!item.createdBy),
+          filter: #"SYSTEM_SYSRULES_queryFilter"(
+            field: "createdBy",
+            operator: "=",
+            value: fv!item.createdBy
+          ),
+          dataCount: fv!item.numberCreated
+        )
+      )
+    )
+  )
+)</a:facetExpr>
+            <a:sortOrderIndex>0</a:sortOrderIndex>
+            <a:facetOrderIndex>0</a:facetOrderIndex>
+            <a:visibilityExpr></a:visibilityExpr>
+            <a:defaultOptionExpr></a:defaultOptionExpr>
+            <a:allowMultipleSelections>false</a:allowMultipleSelections>
+        </a:fieldCfg>
+        <a:detailViewCfg>
+            <a:nameExpr>="Summary"</a:nameExpr>
+            <a:uiExpr>#"_a-0000e0cb-9c1d-8000-29b4-01ef9001ef90_22069"(rp!id)</a:uiExpr>
+            <a:visibilityExpr>=true()</a:visibilityExpr>
+            <a:urlStub>summary</a:urlStub>
+            <a:headerExpr></a:headerExpr>
+            <a:relatedActionCfg>eedae524-b218-4637-a330-009a401eec1c</a:relatedActionCfg>
+            <a:relatedActionCfg>cb69dcc2-c331-48c4-8a05-739ddd58f94a</a:relatedActionCfg>
+            <a:relatedActionCfg>faf65e9c-2b1b-4d8a-afae-e5fb28d46572</a:relatedActionCfg>
+        </a:detailViewCfg>
+        <a:detailViewCfg>
+            <a:nameExpr>"Activity History"</a:nameExpr>
+            <a:uiExpr>#"_a-0000e0cb-9c1d-8000-29b4-01ef9001ef90_22037"(rp!id)</a:uiExpr>
+            <a:visibilityExpr>=true()</a:visibilityExpr>
+            <a:urlStub>_1HWVcg</a:urlStub>
+            <a:headerExpr></a:headerExpr>
+            <a:relatedActionCfg>eedae524-b218-4637-a330-009a401eec1c</a:relatedActionCfg>
+            <a:relatedActionCfg>cb69dcc2-c331-48c4-8a05-739ddd58f94a</a:relatedActionCfg>
+        </a:detailViewCfg>
+        <a:relatedActionCfg>
+            <a:target xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:ProcessModel" a:uuid="b3bb4a72-e900-4079-b9dd-5617927a0021"/>
+            <a:contextExpr>with(
+  local!record: #"f1fc00f1-f8cf-44b8-9cf1-f68b62f582dc_GETONERECORD"(rp!id),
+  {
+    record: local!record,
+    documents: folder(local!record.folderId, "documentChildren"),
+  }
+)</a:contextExpr>
+            <a:visibilityExpr>=true()</a:visibilityExpr>
+            <a:iconId>f044</a:iconId>
+            <a:refId>eedae524-b218-4637-a330-009a401eec1c</a:refId>
+            <a:staticTitle>true</a:staticTitle>
+            <a:staticDescription>true</a:staticDescription>
+        </a:relatedActionCfg>
+        <a:relatedActionCfg>
+            <a:target xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:ProcessModel" a:uuid="6ae850d9-3cae-496f-9990-d13058b7ef74"/>
+            <a:contextExpr>{
+  recordId: rp!id
+}</a:contextExpr>
+            <a:visibilityExpr>=true()</a:visibilityExpr>
+            <a:iconId>f046</a:iconId>
+            <a:refId>cb69dcc2-c331-48c4-8a05-739ddd58f94a</a:refId>
+            <a:staticTitle>true</a:staticTitle>
+            <a:staticDescription>true</a:staticDescription>
+        </a:relatedActionCfg>
+        <a:relatedActionCfg>
+            <a:target xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:ProcessModel" a:uuid="fd9f78db-89a4-46c6-9000-0497f0aaab3f"/>
+            <a:contextExpr>{
+  record: #"f1fc00f1-f8cf-44b8-9cf1-f68b62f582dc_GETONERECORD"(rp!id)
+}</a:contextExpr>
+            <a:visibilityExpr>=true()</a:visibilityExpr>
+            <a:iconId>f014</a:iconId>
+            <a:refId>faf65e9c-2b1b-4d8a-afae-e5fb28d46572</a:refId>
+            <a:staticTitle>true</a:staticTitle>
+            <a:staticDescription>true</a:staticDescription>
+        </a:relatedActionCfg>
+        <a:isSystem>false</a:isSystem>
+        <a:dataSrcExpr></a:dataSrcExpr>
+        <a:facetsListExpr></a:facetsListExpr>
+        <a:titleExpr>rf!title</a:titleExpr>
+        <a:defaultFiltersExpr></a:defaultFiltersExpr>
+        <a:layoutType>GRID</a:layoutType>
+        <a:security>16383</a:security>
+        <a:hideLatestNews>false</a:hideLatestNews>
+        <a:isExportable>true</a:isExportable>
+    </recordType>
+    <roleMap>
+        <role name="record_type_administrator">
+            <users/>
+            <groups>
+                <groupUuid>_e-0000e0cb-9c08-8000-2981-011e94011e94_8</groupUuid>
+            </groups>
+        </role>
+        <role name="record_type_viewer">
+            <users/>
+            <groups>
+                <groupUuid>_e-0000e0cb-9c08-8000-2981-011e94011e94_9</groupUuid>
+            </groups>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="6b250859-eae6-4aef-af34-bdbfea71b560"/>
+    </history>
+</recordTypeHaul>

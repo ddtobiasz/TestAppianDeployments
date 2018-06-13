@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="urn:com:appian:types:QACC"
+  xmlns:tns="urn:com:appian:types:QACC" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="QACC_QuickAppCalledCrap">
+    <xsd:annotation>
+      <xsd:appinfo source="appian.jpa">@Table(name="qckapp_qacc_main")</xsd:appinfo>
+      <xsd:documentation><![CDATA[Base data structure for a single Quick App Called Craprecord]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="id" nillable="true" type="xsd:int">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Id @GeneratedValue</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="title" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="title")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="folderId" nillable="true" type="xsd:int"/>
+      <xsd:element name="createdBy" nillable="true" type="xsd:string"/>
+      <xsd:element name="createdOn" nillable="true" type="xsd:dateTime"/>
+      <xsd:element name="updatedBy" nillable="true" type="xsd:string"/>
+      <xsd:element name="updatedOn" nillable="true" type="xsd:dateTime"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

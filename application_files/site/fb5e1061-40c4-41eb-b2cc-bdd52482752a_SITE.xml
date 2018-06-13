@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<siteHaul xmlns:a="http://www.appian.com/ae/types/2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <versionUuid>d82f5476-2ffa-4e21-86b1-7fc4d2148494</versionUuid>
+  <site a:uuid="fb5e1061-40c4-41eb-b2cc-bdd52482752a_SITE" name="Quick App Called Crap">
+    <description>Quick App Called Crap</description>
+    <urlStub>quick-app-called-crap</urlStub>
+    <page>
+      <staticName>Quick App Called Crap</staticName>
+      <description/>
+      <urlStub>records</urlStub>
+      <uiObject a:uuid="d9bb2f83-3877-4b57-8303-c29d65b2743d" xsi:type="a:RecordType">
+        <a:isSystem>false</a:isSystem>
+        <a:security>16383</a:security>
+        <a:hideLatestNews>false</a:hideLatestNews>
+        <a:isExportable>true</a:isExportable>
+      </uiObject>
+      <iconId>f000</iconId>
+      <visibilityExpr>fn!true()</visibilityExpr>
+      <pageWidth>STANDARD</pageWidth>
+    </page>
+    <page>
+      <staticName>New</staticName>
+      <description/>
+      <urlStub>new</urlStub>
+      <uiObject a:uuid="198edde7-ba84-47da-a058-5fb01e8e502e" xsi:type="a:ProcessModel"/>
+      <iconId>f067</iconId>
+      <visibilityExpr>fn!true()</visibilityExpr>
+      <pageWidth>NARROW</pageWidth>
+    </page>
+    <page>
+      <staticName>Trends</staticName>
+      <description/>
+      <urlStub>trends</urlStub>
+      <uiObject a:uuid="efc21ff8-4da4-40f3-a140-5b72ac04ca0a" xsi:type="a:TempoReport"/>
+      <iconId>f080</iconId>
+      <visibilityExpr>fn!true()</visibilityExpr>
+      <pageWidth>WIDE</pageWidth>
+    </page>
+    <page>
+      <staticName>My Tasks</staticName>
+      <description/>
+      <urlStub>tasks</urlStub>
+      <uiObject a:uuid="fb9d9cd3-7205-4a22-9f7a-2da864a1a94e" xsi:type="a:TaskReport"/>
+      <iconId>f046</iconId>
+      <visibilityExpr>fn!true()</visibilityExpr>
+      <pageWidth>WIDE</pageWidth>
+    </page>
+    <visibility>268435456</visibility>
+    <headerBackgroundColor/>
+    <selectedTabBackgroundColor/>
+    <faviconRef a:uuid="SYSTEM_CONTENT_SITES_DEFAULT_FAVICON" xsi:type="a:CollaborationDocument"/>
+    <faviconHref/>
+    <logoRef a:uuid="SYSTEM_CONTENT_SITES_DEFAULT_LOGO" xsi:type="a:CollaborationDocument"/>
+    <logoHref/>
+    <headerBackgroundColorExpr/>
+    <selectedTabBackgroundColorExpr/>
+    <accentColorExpr xsi:nil="true"/>
+    <logoExpr xsi:nil="true"/>
+    <faviconExpr xsi:nil="true"/>
+    <showName>false</showName>
+    <tempoLinkVisibility>HIDDEN</tempoLinkVisibility>
+    <showRecordNews>false</showRecordNews>
+  </site>
+  <roleMap>
+    <role name="site_administrator">
+      <users/>
+      <groups>
+        <groupUuid>_e-0000e0cb-9c08-8000-2981-011e94011e94_8</groupUuid>
+      </groups>
+    </role>
+    <role name="site_viewer">
+      <users/>
+      <groups>
+        <groupUuid>_e-0000e0cb-9c08-8000-2981-011e94011e94_9</groupUuid>
+      </groups>
+    </role>
+  </roleMap>
+  <history>
+    <historyInfo versionUuid="d82f5476-2ffa-4e21-86b1-7fc4d2148494"/>
+  </history>
+</siteHaul>

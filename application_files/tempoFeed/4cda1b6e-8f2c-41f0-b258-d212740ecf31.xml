@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tempoFeedHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>7d98d9bd-92bb-41d4-881c-06c187eafd7d</versionUuid>
+    <tempoFeed>
+        <uuid>4cda1b6e-8f2c-41f0-b258-d212740ecf31</uuid>
+        <name>Quick App Called Crap</name>
+        <description>Feed for updates about Quick App Called Crap</description>
+        <showInCatalog>true</showInCatalog>
+        <systemFeed>false</systemFeed>
+    </tempoFeed>
+    <roleMap>
+        <role name="administrator">
+            <users/>
+            <groups>
+                <groupUuid>_e-0000e0cb-9c08-8000-2981-011e94011e94_8</groupUuid>
+            </groups>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="7d98d9bd-92bb-41d4-881c-06c187eafd7d"/>
+    </history>
+</tempoFeedHaul>
